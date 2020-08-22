@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib import admin
-from django.contrib.gis import admin as geoadmin
+#from django.contrib.gis import admin as geoadmin
 from django.db.models.manager import Manager
 from django.utils import timezone
 from django.contrib.auth.models import User
