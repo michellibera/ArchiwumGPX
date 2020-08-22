@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't41^*nd5!73^af*8n_721mkeenfel+sh3se853%jltqg88p)*0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['archiwumgpx.herokuapp.com','127.0.0.1']
 
 
 # Application definition
