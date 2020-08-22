@@ -1,0 +1,15 @@
+{% extends "gpsarchive/base.html"%}
+{% load crispy_forms_tags %}
+{%block title%}Login{%endblock%}
+    {%block content%}
+    <div class="container">
+        <h1>Zaloguj</h1>
+        <form action="." method="post">
+            {{ form|crispy }}
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}" />
+            <button class="btn btn-outline-info" type="submit">LogIn</button>
+            <!--<p><input type="submit" value="LogIn"></p>-->
+        </form>
+    </div>
+    {%endblock content%}

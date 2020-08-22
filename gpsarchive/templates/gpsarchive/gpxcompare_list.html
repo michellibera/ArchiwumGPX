@@ -1,0 +1,40 @@
+{% extends 'gpsarchive/base.html' %}
+
+{% block content %}
+
+  {% block content_header %}
+  <div class="container">
+    <h2>ŚladyGPS</h2>
+    <p>
+      <a href="{% url 'create-compare' %}" class="btn btn-primary">Dodaj Ślady</a>
+    </p>
+  {% endblock %}
+
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Nazwa</th>
+        <th>Opis</th>
+        <th>Pliki</th>
+        <th>Opcje</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for object in gpxcompare %}
+        <tr>
+          <td>{{ object.date|date:"d-m-Y H:i"}}</td>
+          <td>{{ object.title }}</td>
+          <td>{{ object.description }}</td>
+          <td><a  class="article-title" href="{% url 'compare-detail' object.id %}">{{ object.gpx_file_track }}, {{ object.gpx_file_route }} </a></td>
+          <td><a href="{% url 'compare-detail' object.id %}" class="btn btn-primary">Wyświetl</a> <a href="{% url 'compare-delete' object.id %}" class="btn btn-primary">Usuń</a></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+
+<!--{% url 'compare-detail' object.id %}-->

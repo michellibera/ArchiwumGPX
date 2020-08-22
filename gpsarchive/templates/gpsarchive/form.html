@@ -1,0 +1,27 @@
+{% extends "gpsarchive/base.html" %}
+{% load crispy_forms_tags %}
+    {%block content%}
+
+        <div class="content-section">
+            <form action="" method="post" enctype="multipart/form-data" >
+            <!--<form method="POST">-->
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    
+                    <div class="container">
+                    {{ form|crispy}}
+                    {{ upload|crispy}}
+
+                    <p><input type="submit" value="Upload" /></p>
+
+                        <div class="form-group">
+                            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+            </form>
+
+    {%endblock content%}

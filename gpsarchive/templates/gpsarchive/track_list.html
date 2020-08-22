@@ -1,0 +1,87 @@
+{% extends 'gpsarchive/base.html' %}
+
+{% block content %}
+
+  {% block content_header %}
+  <div class="container table">
+    
+    <p>
+
+      <h2>ŚladyGPS</h2>
+      <a href="{% url 'create-track' %}" class="btn btn-primary">Dodaj Ślad</a>
+    </p>
+  {% endblock %}
+
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Nazwa</th>
+        <th>Opis</th>
+        <th>Plik</th>
+        <th>Opcje</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      {% for object in gpxtrack %}
+        <tr>
+          <td>{{ object.date|date:"d-m-Y H:i"}}</td>
+          <td>{{ object.title }}</td>
+          <td>{{ object.description }}</td>
+          <td>{{ object.gpx_file }}</td>
+          <td><a href="{% url 'gpxtrack-detail' object.id %}" class="btn btn-primary">Wyświetl</a> <a href="{% url 'gpxtrack-delete' object.id %}" class="btn btn-primary">Usuń</a> </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+{% endblock %}
+
+<!--<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Table Style</title>
+  <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+</head>
+
+<body>
+<div class="table-title">
+<h3>Data Table</h3>
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+<th class="text-left">Month</th>
+<th class="text-left">Sales</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+<tr>
+<td class="text-left">January</td>
+<td class="text-left">$ 50,000.00</td>
+</tr>
+<tr>
+<td class="text-left">February</td>
+<td class="text-left">$ 10,000.00</td>
+</tr>
+<tr>
+<td class="text-left">March</td>
+<td class="text-left">$ 85,000.00</td>
+</tr>
+<tr>
+<td class="text-left">April</td>
+<td class="text-left">$ 56,000.00</td>
+</tr>
+<tr>
+<td class="text-left">May</td>
+<td class="text-left">$ 98,000.00</td>
+</tr>
+</tbody>
+</table>
+  
+
+  </body>-->

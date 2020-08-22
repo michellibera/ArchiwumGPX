@@ -1,0 +1,25 @@
+{% extends "gpsarchive/base.html"%}
+
+    {%block content%}
+
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Usuń ślady</legend>
+                    <div class="container">
+                        <h2>Czy jesteś pewien, że chcesz usunąć porównanie śladów "{{object.title}}" ?</h2>
+
+                        <div class="form-group">
+                            <button class="btn btn-outline-danger" type="submit">Tak, Usuń</button>
+                            <a class="btn btn-outline-secondary" href="{% url 'compare-list' %}">Zrezygnuj</a>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+            </form>
+
+        </div>
+
+    {%endblock content%}
