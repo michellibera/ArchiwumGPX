@@ -1,4 +1,4 @@
-from django.contrib.gis.db import models
+from django.db import models
 from django.contrib import admin
 from django.contrib.gis import admin as geoadmin
 from django.db.models.manager import Manager
