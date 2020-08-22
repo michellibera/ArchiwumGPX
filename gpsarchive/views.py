@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import UploadGpxForm
 from .models import  gpxfile,  gpxtrack, gpxcompare
 from django.http import HttpResponseRedirect
-from django.contrib.gis.geos import Point, LineString, MultiLineString
+#from django.contrib.gis.geos import Point, LineString, MultiLineString
 from django.conf import settings
 from django.views.generic import  TemplateView, ListView, CreateView, DetailView, DeleteView
 #from django.core.files.storage import default_storage
