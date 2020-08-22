@@ -1,5 +1,4 @@
-#from django.contrib.gis.admin import OSMGeoAdmin
-#from django.contrib.gis import admin as geoadmin
+
 from django.contrib import admin
 from .models import   gpxfile, gpxtrack, gpxcompare
 
